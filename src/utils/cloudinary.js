@@ -8,7 +8,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const uploadCloudinart = async (localFilePath) => {
+const uploadOnCloudinary = async (localFilePath) => {
     try {
         if (!localFilePath) return null
         //upload file on cloudinary
@@ -23,6 +23,8 @@ const uploadCloudinart = async (localFilePath) => {
         fs.unlinkSync(localFilePath) // remove the locally saved temp file as upload opr failed
     }
 }
+
+export {uploadOnCloudinary}
 
 
 // cloudinary provided methods:-
